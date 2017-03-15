@@ -1,17 +1,17 @@
 <?php
 
 /**
- *Helper function for a noty flash message
+ * Helper function for a noty flash message
  *
  * @param string|null $message
  * @return
  */
-if (!function_exists('flash')) {
-    function flash($message = null)
+if (!function_exists('noty')) {
+    function noty($message = null)
     {
-        $noty = app('flash');
+        $noty = app('noty');
 
-        if (!is_null($message)){
+        if (!is_null($message)) {
             return $noty->message($message);
         }
 
