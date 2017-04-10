@@ -7,6 +7,7 @@
  * @return
  */
 if (!function_exists('noty')) {
+
     function noty($message = null)
     {
         $noty = app('noty');
@@ -14,6 +15,7 @@ if (!function_exists('noty')) {
         if (!is_null($message)) {
             return $noty->message($message);
         }
+
 
         return $noty;
     }
