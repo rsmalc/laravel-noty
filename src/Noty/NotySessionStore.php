@@ -3,8 +3,7 @@ namespace RSmalc\Noty;
 
 use Illuminate\Session\Store;
 
-
-class NotySessionStore implements NotySessionInterface
+class NotySessionStore
 {
     private $session;
 
@@ -13,7 +12,7 @@ class NotySessionStore implements NotySessionInterface
      *
      * @param Store $session
      */
-    public function __construct(NotySessionInterface $session)
+    public function __construct(Store $session)
     {
         $this->session = $session;
     }
@@ -24,7 +23,7 @@ class NotySessionStore implements NotySessionInterface
      * @param string $name
      * @return array $data
      */
-    public function noty($name, $data = [])
+    public function flash($name, $data = [])
     {
         $this->session->flash($name, $data);
     }

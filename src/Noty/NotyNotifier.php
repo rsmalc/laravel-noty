@@ -12,7 +12,7 @@ class NotyNotifier
      *
      * @param SessionStore $session
      */
-    function __construct(NotySessionInterface $session)
+    function __construct(NotySessionStore $session)
     {
         $this->session = $session;
     }

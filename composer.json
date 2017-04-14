@@ -1,6 +1,6 @@
 {
   "name": "rsmalc/noty",
-  "description": "Flash Messages for Laravel Aplication using jQuery noty library",
+  "description": "Flash Messages for Laravel Aplication using Noty v3 library",
   "license": "MIT",
   "authors": [
     {
@@ -13,8 +13,8 @@
     "illuminate/support": "~5.0"
   },
   "autoload": {
-    "psr-0": {
-      "RSmalc\\Noty": "src/"
+    "psr-4": {
+      "RSmalc\\": "src/"
     },
     "files": [
       "src/Noty/helpers.php"

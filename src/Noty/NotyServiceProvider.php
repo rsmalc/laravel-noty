@@ -14,13 +14,12 @@ class NotyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../views/noty-template.blade.php', 'noty');
+        $this->loadViewsFrom(__DIR__.'/../views/noty-template.blade.php');
 
         $this->publishes([
             __DIR__.'/../../config/laravel-noty.php' => config_path('laravel-noty.php'),
         ]);
     }
-
     /**
      * Register bindings in the container.
      *
@@ -28,13 +27,10 @@ class NotyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(
-            \RSmalc\Noty\NotySessionInterface::class,
-            \RSmalc\Noty\NotySessionStore::class
-        );
+        $this->app->bind(NotySessionStore::class);
 
         $this->app->singleton('noty', function () {
-            return $this->app->make('\RSmalc\Noty\NotySessionStore');
+            return $this->app->make(NotyNotifier::class);
         });
     }
 }
