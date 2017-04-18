@@ -6,7 +6,7 @@ This is my first Laravel package, I got an inspiration from Jeffrey Way - [Easy 
 ### Package installation
 Use composer to install a package.
 
-Run `composer require rsmalc/noty`
+Run `composer require rsmalc/laravel-noty`
 
 In Laravel 5 include the service provider within `config/app.php`.
 
