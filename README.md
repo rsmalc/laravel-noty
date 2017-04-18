@@ -1,2 +1,46 @@
-# Flash Messages for Laravel Aplication using jQuery noty library
+# Flash Messages for Laravel Aplication using Noty v3 library
+
+## Installation
+### Package installation
+Use composer to install a package.
+
+Run `composer require rsmalc/noty`
+
+In Laravel 5 include the service provider within `config/app.php`.
+
+```php
+'providers' => [
+    RSmalc\Noty\NotyServiceProvider::class,
+];
+```
+
+### Noty  library installation
+Install via Bower
+```
+$ bower install noty
+```
+Install via NPM or YARN
+```
+$ npm install noty
+$ yarn add noty
+```
+Install via Composer
+```
+$ composer require needim/noty
+```
+Use gulp or webpack to compile it or just copy all file to public folder.
+
+## Use
+```html
+<head>    
+    <link rel="stylesheet" href="/noty.css"></script>
+    <script type="text/javascript" src="/noty.js"></script>
+</head>
+```
+
+Add in your layout view:
+
+```html
+@include('noty::message')
+```
 
