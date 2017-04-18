@@ -45,6 +45,18 @@ Add in your layout view:
 ```html
 @include('noty::message')
 ```
+### Use in a project
+```php
+noty('Your message');
+```
+You can also chose type of the message (alert, success, error, warning, information):
+```php
+noty('Your message', 'alert'); // default 
+noty('Your message', 'success');
+noty('Your message', 'error');
+noty('Your message', 'warning');
+noty('Your message', 'information');
+```
 
 ## Config
 You can set a global configuration for notification messages. 

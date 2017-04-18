@@ -24,13 +24,16 @@ class NotyNotifier
      * Flash a message.
      *
      * @param  string $message
-     * @param  string $level
+     * @param  string $type
      * @return $this
      */
-    public function message($message)
+    public function message($message, $type = 'alert')
     {
         $this->session->flash('noty.message', $message);
         $this->session->flash('noty.config', $this->config);
+
+        if(in_array($type, ['success', 'error', 'warning', 'information', 'notification']))
+            $this->session->flash('noty.config.type', $type);
 
         return $this;
     }

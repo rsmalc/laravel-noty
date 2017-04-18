@@ -7,12 +7,12 @@
  * @return
  */
 if (!function_exists('noty')) {
-    function noty($message = null)
+    function noty($message = null, $type = 'alert')
     {
         $noty = app('noty');
 
         if (!is_null($message)) {
-            return $noty->message($message);
+            return $noty->message($message, $type);
         }
 
         return $noty;
