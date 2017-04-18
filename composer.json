@@ -1,5 +1,5 @@
 {
-  "name": "rsmalc/noty",
+  "name": "rsmalc/laravel-noty",
   "description": "Flash Messages for Laravel Aplication using Noty v3 library",
   "license": "MIT",
   "authors": [
