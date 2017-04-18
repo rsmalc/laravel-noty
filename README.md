@@ -1,5 +1,7 @@
 # Flash Messages for Laravel Aplication using Noty v3 library
 
+This is my first Laravel package, I got an inspiration from Jeffrey Way - [Easy Flash Messages](https://github.com/laracasts/flash)
+
 ## Installation
 ### Package installation
 Use composer to install a package.
