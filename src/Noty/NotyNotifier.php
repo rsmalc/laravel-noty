@@ -6,6 +6,7 @@ class NotyNotifier
 {
 
     private $session;
+    private $config;
 
     /**
      * A new instance.
@@ -15,6 +16,7 @@ class NotyNotifier
     function __construct(NotySessionStore $session)
     {
         $this->session = $session;
+        $this->config = config('laravel-noty');
     }
 
 
@@ -28,6 +30,7 @@ class NotyNotifier
     public function message($message)
     {
         $this->session->flash('noty.message', $message);
+        $this->session->flash('noty.config', $this->config);
 
         return $this;
     }
@@ -40,7 +43,7 @@ class NotyNotifier
      */
     public function config($config = [])
     {
-        $this->session->flash('noty', $config);
+        $this->session->flash('noty.config', $config);
 
         return $this;
     }

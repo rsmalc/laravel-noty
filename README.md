@@ -44,3 +44,14 @@ Add in your layout view:
 @include('noty::message')
 ```
 
+## Config
+You can set a global configuration for notification messages. 
+```php
+php artisan vendor:publish   
+```
+A file will be created in the folder `config/laravel-noty.php`
+
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
