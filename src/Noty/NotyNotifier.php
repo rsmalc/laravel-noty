@@ -29,11 +29,21 @@ class NotyNotifier
      */
     public function message($message, $type = 'alert')
     {
-        $this->session->flash('noty.message', $message);
+        $messages = session('noty.messages');
+        if (empty($messages)) {
+            $messages = [];
+        }
+        
+        $messages[] = [
+            'text' => $message,
+            'type'    => $type,
+        ];
+        $this->session->flash('noty.messages', $messages);
         $this->session->flash('noty.config', $this->config);
 
-        if(in_array($type, ['success', 'error', 'warning', 'information', 'notification']))
+        if(in_array($type, ['success', 'error', 'warning', 'information', 'notification'])) {
             $this->session->flash('noty.config.type', $type);
+        }
 
         return $this;
     }
