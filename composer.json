@@ -20,5 +20,12 @@
       "src/Noty/helpers.php"
     ]
   },
-  "minimum-stability": "stable"
+  "minimum-stability": "stable",
+  "extra": {
+    "laravel": {
+      "providers": [
+        "RSmalc\\Noty\\NotyServiceProvider"
+      ]
+    }
+  }
 }
