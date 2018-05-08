@@ -2,19 +2,52 @@
 
 return [
     /*
-     * Positions:  top, topLeft, topCenter, topRight, center, centerLeft, centerRight, bottom, bottomLeft, bottomCenter, bottomRight
-     */
-    'position' => 'topRight',
+    * Type of a message:  alert, success, error, warning, info.
+    */
+    'type' => 'alert',
 
     /*
-     * Themes:  relax, mint, sunset, metroui, semanticui, bootstrap-v3, bootstrap-v4
+     * Positions:  top, topLeft, topCenter, topRight, center, centerLeft, centerRight, bottom, bottomLeft, bottomCenter, bottomRight
+     */
+    'layout' => 'topRight',
+
+    /*
+     * Themes:  relax, mint, sunset, metroui, semanticui, nest, light, bootstrap-v3, bootstrap-v4
      */
     'theme' => 'mint',
 
     /*
-     * Type of a message:  alert, success, error, warning, information, notification.
+    * [integer|boolean] - Delay for closing event in milliseconds. Set false for sticky notifications.
+    */
+    'timeout' => 3000,
+
+    /*
+     * [boolean] - Displays a progress bar.
      */
-    'type' => 'alert',
+    'progressBar' => 'true',
+
+    /*
+     * Close a flash message
+     */
+    'closeWith' => ['click'], // ['click', 'button']
+
+    /*
+     * You can use this id with querySelectors. Generated automatically if false.
+     */
+    'id' => 'false',
+
+    /*
+     * Animation options - default is used Animated.css class name.
+     */
+    'animation' => [
+      'open' => 'noty_effects_open',
+      'close' => 'noty_effects_close',
+    ],
+
+    /*
+     * modal: boolean
+     */
+    'modal' => 'false',
 
     /*
      * [boolean] If you want to use queue feature set this true.
@@ -27,35 +60,8 @@ return [
     'force' => 'false',
 
     /*
-     * [integer] - You can set max visible notification count for dismissQueue true option.
-     */
-    'maxVisible' => 5,
-
-    /*
-     * [integer|boolean] - Delay for closing event in milliseconds. Set false for sticky notifications.
-     */
-    'timeout' => 3000,
-
-    /*
-     * [boolean] - Displays a progress bar.
-     */
-    'progressBar' => 'false',
-
-    /*
-     * Animation options - default is used Animated.css class name.
-     */
-    'animation' => [
-        'open' => 'bounceInRight',
-        'close' => 'bounceOutRight',
-    ],
-
-    /*
-     * Close a flash message
-     */
-    'closeWith' => ['click'], // ['click', 'button']
-
-    /*
-     * [boolean] - If true closes all notifications and shows itself.
+     * killer: boolean,string
+     * If true closes all visible notifications and shows itself. If string(queueName) closes all visible notification on this queue and shows itself.
      */
     'killer' => 'false',
 

@@ -31,15 +31,15 @@
             });
 
             @foreach (session('noty.messages') as $item)
-            // New Noty instance
-            var noty = new Noty({
-                text: '{{ $item['text'] }}',
-                type: '{{ $item['type'] }}',
-                timeout: '{{ (!empty(session('noty.config.timeout')) ? session('noty.config.timeout') : config('laravel-noty.config.timeout')) }}',
-                {{--@if(session('noty.config.buttons') != 'false' || config('noty.config.buttons') != 'false')--}}
-                    {{--buttons: [ {{ (!empty(session('noty.config.buttons')) ? session('noty.config.buttons') : config('laravel-noty.buttons')) }}  ]--}}
-                {{--@endif--}}
-            }).show();
+                // New Noty instance
+                var noty = new Noty({
+                    text: '{{ $item['text'] }}',
+                    type: '{{ $item['type'] }}',
+                    timeout: '{{ (!empty(session('noty.config.timeout')) ? session('noty.config.timeout') : config('laravel-noty.config.timeout')) }}',
+                    {{--@if(session('noty.config.buttons') != 'false' || config('noty.config.buttons') != 'false')--}}
+                        {{--buttons: [ {{ (!empty(session('noty.config.buttons')) ? session('noty.config.buttons') : config('laravel-noty.buttons')) }}  ]--}}
+                    {{--@endif--}}
+                }).show();
             @endforeach
 
         })();

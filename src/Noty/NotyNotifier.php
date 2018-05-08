@@ -29,15 +29,22 @@ class NotyNotifier
      */
     public function message($message, $type = 'alert')
     {
-        $messages = session('noty.messages');
-        if (empty($messages)) {
-            $messages = [];
+        $messages = [];
+
+        if(!empty($message)) {
+
+            // It loooked if exist any old messages
+            if (!empty(session('noty.messages'))) {
+                $messages = session('noty.messages');
+            }
+
+            // Add last new message
+            $messages[] = [
+              'text' => $message,
+              'type' => $type,
+            ];
         }
-        
-        $messages[] = [
-            'text' => $message,
-            'type'    => $type,
-        ];
+
         $this->session->flash('noty.messages', $messages);
         $this->session->flash('noty.config', $this->config);
 
