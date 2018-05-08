@@ -38,11 +38,13 @@ class NotyNotifier
                 $messages = session('noty.messages');
             }
 
-            // Add last new message
-            $messages[] = [
-              'text' => $message,
-              'type' => $type,
-            ];
+            // Add last new message if it's not in array
+            if(!collect(array_flatten($messages))->contains($message)){
+                $messages[] = [
+                  'text' => $message,
+                  'type' => $type,
+                ];
+            }
         }
 
         $this->session->flash('noty.messages', $messages);
