@@ -23,7 +23,7 @@
                          @endforeach
                     @endif
                 ],
-                id:  {{ (!empty(session('noty.config.id')) ? "'".session('noty.config.id')."'" : 'false') }},
+                id:  {!! (!empty(session('noty.config.id')) ? "'".session('noty.config.id')."'" : false) !!},
                 force: {{ (!empty(session('noty.config.force')) ? session('noty.config.force') : config('laravel-noty.force')) }},
                 queue: 'global',
                 killer: {{  (!empty(session('noty.config.killer')) ? session('noty.config.killer') : config('laravel-noty.killer')) }},
