@@ -3,7 +3,7 @@
         (function () {
             // Noty settings
             Noty.overrideDefaults({
-                layout: '{{ (!empty(session('noty.config.position')) ? session('noty.config.position') : config('laravel-noty.position'))  }}',
+                layout: '{{ (!empty(session('noty.config.layout')) ? session('noty.config.layout') : config('laravel-noty.layout'))  }}',
                 theme: '{{ (!empty(session('noty.config.theme')) ? session('noty.config.theme') : config('laravel-noty.theme'))  }}',
                 animation: {
                     open: 'animated {{ (!empty(session('noty.config.open')) ? session('noty.config.open') : config('laravel-noty.animation.open')) }}',
