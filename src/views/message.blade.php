@@ -3,7 +3,7 @@
         (function () {
             // Noty settings
             Noty.overrideDefaults({
-                layout: '{{ (!empty(session('noty.config.position')) ? session('noty.config.position') : config('laravel-noty.position'))  }}',
+                layout: '{{ (!empty(session('noty.config.layout')) ? session('noty.config.layout') : config('laravel-noty.layout'))  }}',
                 theme: '{{ (!empty(session('noty.config.theme')) ? session('noty.config.theme') : config('laravel-noty.theme'))  }}',
                 animation: {
                     open: 'animated {{ (!empty(session('noty.config.open')) ? session('noty.config.open') : config('laravel-noty.animation.open')) }}',
@@ -23,7 +23,7 @@
                          @endforeach
                     @endif
                 ],
-                id:  {{ (!empty(session('noty.config.id')) ? "'".session('noty.config.id')."'" : 'false') }},
+                id:  {!! (!empty(session('noty.config.id')) ? "'".session('noty.config.id')."'" : false) !!},
                 force: {{ (!empty(session('noty.config.force')) ? session('noty.config.force') : config('laravel-noty.force')) }},
                 queue: 'global',
                 killer: {{  (!empty(session('noty.config.killer')) ? session('noty.config.killer') : config('laravel-noty.killer')) }},
@@ -31,15 +31,15 @@
             });
 
             @foreach (session('noty.messages') as $item)
-            // New Noty instance
-            var noty = new Noty({
-                text: '{{ $item['text'] }}',
-                type: '{{ $item['type'] }}',
-                timeout: '{{ (!empty(session('noty.config.timeout')) ? session('noty.config.timeout') : config('laravel-noty.config.timeout')) }}',
-                {{--@if(session('noty.config.buttons') != 'false' || config('noty.config.buttons') != 'false')--}}
-                    {{--buttons: [ {{ (!empty(session('noty.config.buttons')) ? session('noty.config.buttons') : config('laravel-noty.buttons')) }}  ]--}}
-                {{--@endif--}}
-            }).show();
+                // New Noty instance
+                var noty = new Noty({
+                    text: '{{ $item['text'] }}',
+                    type: '{{ $item['type'] }}',
+                    timeout: '{{ (!empty(session('noty.config.timeout')) ? session('noty.config.timeout') : config('laravel-noty.config.timeout')) }}',
+                    {{--@if(session('noty.config.buttons') != 'false' || config('noty.config.buttons') != 'false')--}}
+                        {{--buttons: [ {{ (!empty(session('noty.config.buttons')) ? session('noty.config.buttons') : config('laravel-noty.buttons')) }}  ]--}}
+                    {{--@endif--}}
+                }).show();
             @endforeach
 
         })();
