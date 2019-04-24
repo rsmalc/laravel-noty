@@ -6,8 +6,8 @@
                 layout: '{{ (!empty(session('noty.config.layout')) ? session('noty.config.layout') : config('laravel-noty.layout'))  }}',
                 theme: '{{ (!empty(session('noty.config.theme')) ? session('noty.config.theme') : config('laravel-noty.theme'))  }}',
                 animation: {
-                    open: 'animated {{ (!empty(session('noty.config.open')) ? session('noty.config.open') : config('laravel-noty.animation.open')) }}',
-                    close: 'animated {{ (!empty(session('noty.config.close')) ? session('noty.config.close') : config('laravel-noty.animation.close')) }}'
+                    open: '{{ (!empty(session('noty.config.open')) ? session('noty.config.open') : config('laravel-noty.animation.open')) }}',
+                    close: '{{ (!empty(session('noty.config.close')) ? session('noty.config.close') : config('laravel-noty.animation.close')) }}'
                 },
                 progressBar: {{ (!empty(session('noty.config.progressBar')) ? session('noty.config.progressBar') : config('laravel-noty.progressBar')) }},
                 closeWith: [
