@@ -19,7 +19,7 @@ return [
     /*
     * [integer|boolean] - Delay for closing event in milliseconds. Set false for sticky notifications.
     */
-    'timeout' => 3000,
+    'timeout' => 4000,
 
     /*
      * [boolean] - Displays a progress bar.
@@ -37,7 +37,7 @@ return [
     'id' => 'false',
 
     /*
-     * Animation options - default is used Animated.css class name.
+     * Default noty animation, you can use Animated.css or anything else
      */
     'animation' => [
       'open' => 'noty_effects_open',
