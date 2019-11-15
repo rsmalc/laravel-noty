@@ -2,6 +2,8 @@
 
 namespace RSmalc\Noty;
 
+use Illuminate\Support\Arr;
+
 class NotyNotifier
 {
 
@@ -39,7 +41,7 @@ class NotyNotifier
             }
 
             // Add last new message if it's not in array
-            if(!collect(array_flatten($messages))->contains($message)){
+            if(!collect(Arr::flatten($messages))->contains($message)){
                 $messages[] = [
                   'text' => $message,
                   'type' => $type,
