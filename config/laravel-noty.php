@@ -32,9 +32,9 @@ return [
     'closeWith' => ['click'], // ['click', 'button']
 
     /*
-     * You can use this id with querySelectors. Generated automatically if false.
+     * You can use this id with querySelectors. Generated automatically if false (must be boolean false).
      */
-    'id' => 'false',
+    'id' => false,
 
     /*
      * Default noty animation, you can use Animated.css or anything else
